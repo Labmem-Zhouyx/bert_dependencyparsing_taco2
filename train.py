@@ -150,8 +150,8 @@ def validate(model, criterion, iteration, device, valset, hparams, collate_fn, l
             val_loss += loss.item()
         val_loss = val_loss / (i + 1)
 
-    wav_reconstructions = vocoder_infer(targets[0].transpose(1, 2), vocoder, hparams, lengths=inputs[3] * hparams["audio"]["hop_length"])
-    wav_predictions = vocoder_infer(predicts[1].transpose(1, 2), vocoder, hparams, lengths=inputs[3] * hparams["audio"]["hop_length"])
+    wav_reconstructions = vocoder_infer(targets[0].transpose(1, 2), vocoder, hparams, lengths=inputs[-1] * hparams["audio"]["hop_length"])
+    wav_predictions = vocoder_infer(predicts[1].transpose(1, 2), vocoder, hparams, lengths=inputs[-1] * hparams["audio"]["hop_length"])
 
     model.train()
     print("Validation loss {}: {:9f}  ".format(iteration, val_loss))
