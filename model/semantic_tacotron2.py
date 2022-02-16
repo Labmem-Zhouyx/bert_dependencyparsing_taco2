@@ -331,9 +331,18 @@ class Semantic_Tacotron2(nn.Module):
 
         return mel_outputs, mel_post, stop_tokens, alignments
 
-    def inference(self, inputs):
+    def inference(self, batch):
+        device = next(self.parameters()).device
+        text, text_length, word_emb, phone2word_idx, g_batch = batch
+        text = text.to(device).long()
+        text_length = text_length.to(device).long()
+        word_emb = word_emb.to(device).float()
+        semantic_representation = torch.zeros(text.size(0), text.size(1), self.bert_dim).to(device).float()
+        phone2word_idx = phone2word_idx.to(device).long()
+        g_batch = graph_to_device(g_batch, device, self.graph_type)
+
         # Only text inputs
-        inputs = inputs, None, None
+        inputs = text, text_length, word_emb, semantic_representation, phone2word_idx, g_batch, None, None
         return self.forward(inputs)
 
 

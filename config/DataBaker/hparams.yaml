@@ -15,13 +15,14 @@ train:
   ignore_layers: ["embedding.weight"]
   output_dir: "out"
   log_dir: "log"
+  result_dir: "result"
   checkpoint_path: ""
 
 dataset:
-  melfile_path: "/data/training_data/preprocessed_data/DataBaker_16k/mel/"
+  data_path: "/data/training_data/preprocessed_data/DataBaker_16k/"
   lexicon_path: "lexicon/pinyin-lexicon-r.txt"
-  training_files: "preprocessed_data/DataBaker/train_grapheme.txt"
-  validation_files: "preprocessed_data/DataBaker/val_grapheme.txt"
+  training_files: "preprocessed_data/DataBaker/train.txt"
+  validation_files: "preprocessed_data/DataBaker/val.txt"
   
 model:
   tacotron_version: "2"  

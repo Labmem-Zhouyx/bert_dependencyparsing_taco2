@@ -7,8 +7,6 @@ import yaml
 import torch
 from torch.utils.data import DataLoader
 
-import stanza
-from pytorch_pretrained_bert import BertModel, BertTokenizer
 from model.tacotron import Tacotron, TacotronLoss
 from model.tacotron2 import Tacotron2, Tacotron2Loss
 from model.semantic_tacotron2 import Semantic_Tacotron2, Semantic_Tacotron2Loss
@@ -20,25 +18,12 @@ from vocoder import get_vocoder, vocoder_infer
 
 
 def prepare_datasets(hparams):
-    if hparams["lang"] == "en":
-        # stanza.download("en", "path")
-        nlp = stanza.Pipeline("en", "/apdcephfs/private_yatsenzhou/pretrained/stanza/stanza_en")
-        # https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased.tar.gz
-        # https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt
-        bert = BertModel.from_pretrained("/apdcephfs/private_yatsenzhou/pretrained/bert/bert-base-uncased")
-        tokenizer = BertTokenizer.from_pretrained("/apdcephfs/private_yatsenzhou/pretrained/bert/bert-base-uncased/bert-base-uncased-vocab.txt")
-    else:
-        # stanza.download("zh", "path")
-        nlp = stanza.Pipeline("zh", "/apdcephfs/private_yatsenzhou/pretrained/stanza/stanza_zh")
-        # https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese.tar.gz
-        # https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-vocab.txt
-        bert = BertModel.from_pretrained("/apdcephfs/private_yatsenzhou/pretrained/bert/bert-base-chinese")
-        tokenizer = BertTokenizer.from_pretrained("/apdcephfs/private_yatsenzhou/pretrained/bert/bert-base-chinese/bert-base-chinese-vocab.txt")
+
     # Get data, data loaders and collate function ready
-    trainset = TextMelDataset(hparams["dataset"]["training_files"], hparams, nlp, bert, tokenizer)
-    valset = TextMelDataset(hparams["dataset"]["validation_files"], hparams, nlp, bert, tokenizer)
+    trainset = TextMelDataset(hparams["dataset"]["training_files"], hparams)
+    valset = TextMelDataset(hparams["dataset"]["validation_files"], hparams)
     collate_fn = TextMelCollate(hparams["model"]["r"])
-    #
+
     return trainset, valset, collate_fn
 
 
@@ -258,7 +243,6 @@ def train(hparams, warm_start):
 
 
 if __name__ == '__main__':
-    torch.multiprocessing.set_start_method('spawn')
     parser = argparse.ArgumentParser()
     parser.add_argument('--hparams_path', type=str, required=True, help='path to hparams.yaml')
     parser.add_argument('--warm_start', action='store_true',

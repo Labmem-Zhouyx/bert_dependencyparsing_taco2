@@ -3,3 +3,7 @@ numpy==1.13.3
 inflect==0.2.5
 Unidecode==1.0.22
 pillow
+dgl
+pytorch_pretrained_bert
+stanza
+

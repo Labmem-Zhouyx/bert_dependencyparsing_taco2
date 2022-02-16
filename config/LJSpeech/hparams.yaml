@@ -15,13 +15,14 @@ train:
   ignore_layers: ["embedding.weight"]
   output_dir: "out"
   log_dir: "log"
+  result_dir: "result"
   checkpoint_path: ""
 
 dataset:
-  melfile_path: "/data/training_data/preprocessed_data/LJSpeech/mel/"
+  data_path: "/data/training_data/preprocessed_data/LJSpeech/"
   lexicon_path: "lexicon/librispeech-lexicon.txt"
-  training_files: "preprocessed_data/LJSpeech/train_grapheme.txt"
-  validation_files: "preprocessed_data/LJSpeech/val_grapheme.txt"
+  training_files: "preprocessed_data/LJSpeech/train.txt"
+  validation_files: "preprocessed_data/LJSpeech/val.txt"
   
 model:
   tacotron_version: "2"  

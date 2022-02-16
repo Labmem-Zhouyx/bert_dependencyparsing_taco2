@@ -1,4 +1,6 @@
 __pycache__/
 out/
 log/
+result/
 start.sh
+submit2jizhi.json

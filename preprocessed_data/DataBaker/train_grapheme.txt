@@ -390,7 +390,7 @@
 006754|DataBaker|nai3-nai5/hai2 liu2-zai4 xian4-chang3.|奶奶还留在现场。
 001228|DataBaker|xiao3-cong1-ming5,ye3-shi4 cong1-ming5-ma5.|小聪明也是聪明嘛。
 009360|DataBaker|sui2-hou4,you2 liang3-ming2/shen1-cai2 lve4-wei2 ai2-xiao3-de5 xiao1-fang2 guan1-bing1,jin4-ru4 jia4-shi3-shi4/jin4-xing2 ying2-jiu4.|随后，由两名身材略为矮小的消防官兵进入驾驶室进行营救。
-007427|DataBaker|bu2-guo4,xing1-jian4 lei2-da2-de5 gao1-ang2 fei4-yong4,ye2 yin3-fa1 zheng1-yi4.|不过，兴建雷达的高昂费用也引发争议。
+007427|DataBaker|bu2-guo4/xing1-jian4 lei2-da2-de5 gao1-ang2 fei4-yong4,ye2 yin3-fa1 zheng1-yi4.|不过，兴建雷达的高昂费用也引发争议。
 006490|DataBaker|mei2-kong4 suan4-le5,bu4-gei2 ni3-le5!|没空算了，不给你了！
 008580|DataBaker|zhe4 nan2-dao4 jiu4-shi4/da4-ming2-ding2-ding3-de5 zhong1-guo2 qi1-wang2/huang2-xing1-guo2-ma5?|这难道就是大名鼎鼎的中国漆王黄兴国吗？
 004295|DataBaker|zhe4-xia4/re2-nao3-le5 liu2-peng2.|这下惹恼了刘鹏。
@@ -3847,7 +3847,8 @@
 004316|DataBaker|jiang1-feng1 lin3-lie4,yu2-shuang1-ge1/da3-le5-ge5 han2-zhan4.|江风凛冽，于双戈打了个寒战。
 003032|DataBaker|zui4-zhong1,ta1 jiang1-she2 yao2-si3,wei4-zi4-ji3 bao4-le5 yi4-yao3 zhi1-chou2.|最终他将蛇咬死，为自己报了一咬之仇。
 001417|DataBaker|zhen1-you3 gong1-yi4 ke3-yan2-ma5?|真有公义可言吗？
-010000|DataBaker|zai4 yu4-zhong1,zhang1-ming2-bao2 hui3-hen4 jiao1-jia1/xie3-le5 yi2-fen4 chan4-hui3-shu1.|在狱中，张明宝悔恨交加，写了一份忏悔书。006480|DataBaker|peng2-you5 quan4-dao4,shi4-bu2-shi4/ni3 zi4-ji2 you3-wen4-ti2-a5.|朋友劝道是不是你自己有问题啊。
+010000|DataBaker|zai4 yu4-zhong1,zhang1-ming2-bao2 hui3-hen4 jiao1-jia1/xie3-le5 yi2-fen4 chan4-hui3-shu1.|在狱中，张明宝悔恨交加，写了一份忏悔书。
+006480|DataBaker|peng2-you5 quan4-dao4,shi4-bu2-shi4/ni3 zi4-ji2 you3-wen4-ti2-a5.|朋友劝道是不是你自己有问题啊。
 008956|DataBaker|shang4-mian4/xie2-you3 ming2-zi4,chu1-sheng1 nian2-yue4-deng3 xin4-xi1,dan4 xian4-zai4/dou1 gao3-diu1-le5.|上面写有名字出生年月等信息，但现在都搞丢了。
 001220|DataBaker|bei4-hai4-ren2/xiao2-yu3,qia4-qiao2/ye3-zu1 zhu4-zai4/gai1-dong4 lou2-shang4.|被害人小雨恰巧也租住在该栋楼上。
 003869|DataBaker|ji4-zhe3/hai2 song2-yong3 sun1-li4 qin1-deng4-chao1,sun1-li4 wan3-ju4-le5.|记者还怂恿孙俪亲邓超，孙俪婉拒了。
@@ -5436,7 +5437,7 @@
 006631|DataBaker|zai4 dui4-wu3 zui4-qian2-mian4-de5/shi4 shen1-chuan1 ling2-ling2-yi1-hao4 qiu2-fu2-de5 zhao4-feng4-lin2.|在队伍最前面的是身穿零零一号囚服的赵凤林。
 008439|DataBaker|dui4-yuan2-men5 zhi1-dao4,ta1-men5 shen1-shang4 you3-jia1-huo5.|队员们知道，他们身上有家伙。
 002715|DataBaker|jin1-tian1 zao3-shang4,wo3-men5 yi3-jing1 ba3-zei2 zhua1-dao4-le5,er2-qie3/fa3-guan1/yi3-jing5 pan4-le5 ta1-de5-zui4-ne5!|今天早上我们已经把贼抓到了，而且法官已经判了他的罪呢！
-002365|DataBaker|zhe4-tu2/nan2-bu4-cheng2/shi4 P-IY1-guo4?|这图难不成是Ｐ过的？
+002365|DataBaker|zhe4-tu2/nan2-bu4-cheng2/shi4 pi1-guo4-de5?|这图难不成是批过的？
 008914|DataBaker|dao2-yan3/piao2-gen1-heng1 ren4-wei2,nian2-qing1-ren2-de5 pang2-huang2 he2 zheng1-zha2,wang2-wang3 shi4-ta1-men5 cheng2-zhang3-de5 guo4-cheng2.|导演朴根亨认为，年轻人的彷徨和挣扎往往是他们成长的过程。
 006002|DataBaker|ke3-shi4/xiang1-gang3-de5 nv3-hai2-zi5 hen2-niu3-nie1.|可是香港的女孩子很扭捏。
 009879|DataBaker|zou3 cha4-bu4-duo1 ji3-fen1-zhong1.|走差不多几分钟。
@@ -5492,7 +5493,7 @@
 007318|DataBaker|ke3-neng2-xing4/you4-you3 duo1-da4-ne5?|可能性又有多大呢？
 003097|DataBaker|li3-fu2-gen1/yu2 liang3-sui4-de5 you4-er2/shang4-wei4 xun2-huo4,dan4 sheng1-huan2 ji1-hui4/ji2-qi2 miao2-xiao3.|李福根与两岁的幼儿尚未寻获，但生还机会极其渺小。
 009090|DataBaker|qian2-xie1-nian2/chu1-xian4-le5 xi2-zao3-xie4,tou4-qi4-xie4,deng3 ge4-lei4/da3-zhe5 yang2-cheng2-hu2 zhao1-pai2-de5 hu2-xie4.|前些年出现了洗澡蟹透气蟹等各类打着阳澄湖招牌的湖蟹。
-007968|DataBaker|san1-yao1-er4 guo2-dao4/ma2-jie1-ling3-duan4/shan1-ti3 ta1-fang1,che1-liang4 bei4-mai2.|三幺二国道麻街岭段山体塌方，车辆被埋。
+007968|DataBaker|san1-yao1-er4 guo2-dao4/ma2-jie1-ling3-duan4/shan1-ti3 ta1-fang1/che1-liang4 bei4-mai2.|三幺二国道麻街岭段山体塌方，车辆被埋。
 006770|DataBaker|er2 zhe4-yi2 zhan4-huo3/jiang1 tun1-mo4 zheng3-ge4 di4-qu1,bing4 po4-shi2 mei3-guo2 xing2-dong4.|而这一战火将吞没整个地区并迫使美国行动。
 004135|DataBaker|cun1-min2 yuan4-zhong1-de5 da4-ku1-long5.|村民院中的大窟窿。
 006054|DataBaker|you3-de5 di4-qu1 jiao4-wei2 qiang2-shou3,you3-de5 di4-qu1 he2 wei4-zhi4/jiu4 bi3-jiao4 rong3-yu2.|有的地区较为抢手，有的地区和位置就比较冗余。
@@ -5627,7 +5628,7 @@
 007046|DataBaker|jing3-fang1 jie4-ru4 zhui1-cha2-hou4,gong1-si1 lao2-ban3/hong3-pian4 yi2-ge4 shi2-huang1-nan2 ding3-bao1.|警方介入追查后，公司老板哄骗一个拾荒男顶包。
 005811|DataBaker|wo3 bu2-shi4 te4-bie2 dong3 lan2-qiu2.|我不是特别懂篮球。
 009233|DataBaker|xiong1-mei4-lia3/shou1-shi5-hao3 pu1-gai4,yong4 jia4-zi5-che1/la1-zhe5 fu4-qin1 qu4-shang4-xue2.|兄妹俩收拾好铺盖，用架子车拉着父亲去上学。
-001834|DataBaker|liang3-ren2/yi4-zuo3 yi2-you4,hen3-shi4 qin1-mi4.|两人一左一右，很是亲密。
+001834|DataBaker|liang3-ren2/yi4-zuo3 yi2-you4/hen3-shi4 qin1-mi4.|两人一左一右，很是亲密。
 004826|DataBaker|dan4/pai1-she4-shi2,zhu2-yan3-men5/dou1 xin1-jing1 dan3-zhan4.|但拍摄时主演们都心惊胆颤。
 006373|DataBaker|tong2-shi2/ta1 tou4-lu4,lei2-jun1/jin4-qi1 ye3-ceng2-dao4 dian3-xin1 tuan2-dui4 bai4-fang3.|同时他透露，雷军近期也曾到点心团队拜访。
 001468|DataBaker|yao4-dai4/xiao2-ke3-ai4/dao4 zheng4-gui1 yi1-yuan4/zhu4-she4 yi4-miao2-o5,yi4-ban1/cheng2-nian2-quan3/yi2-ci4 ji2-ke3.|要带小可爱到正规医院注射疫苗哦，一般成年犬一次即可。
@@ -6629,7 +6630,7 @@
 006842|DataBaker|zhuang4-yuan2-juan3,zai4 shang4-hai3 min2-jian1 liu2-chuan2 zhi4-jin1/shi2-shu2 han3-jian4.|状元卷在上海民间流传至今实属罕见。
 007086|DataBaker|ta1 yi3-jing1 yao1-qiu2 tu2-er3-qi2 guan1-fang1/jia1-qiang2 dui4 mei3-guo2/wai4-jiao1 shi3-tuan2-de5 an1-quan2 bao3-hu4.|他已经要求土耳其官方加强对美国外交使团的安全保护。
 005137|DataBaker|da4-bu4-fen5 gua1-nong2-cheng1,dou1-mei2-you2 wang3-nian2 mai4-de5-hao3.|大部分瓜农称，都没有往年卖得好。
-003300|DataBaker|mei2-nv3 yi2-leng4,ruo4-ruo4-de5-shuo1,wo3-song4-ni3 chu1-qu4-ba5.|美女一愣弱弱的说我送你出去吧。
+003300|DataBaker|mei2-nv3 yi2-leng4,ruo4-ruo4-de5-shuo1,wo3-song4-ni3 chu1-qu4-ba5.|美女一愣弱弱的说我送你出去吧
 002954|DataBaker|guo4-qu4,gai1-gong1-si1 shi4-yi2-ge4/mo4-mo4-wu2-wen2-de5/zuo1-fang5-shi4/zhong1-yao4 sheng1-chan3 xiao2-chang3.|过去该公司是一个默默无闻的作坊式中药生产小厂。
 003237|DataBaker|huang2-qi3-si1 yi4-jia1/ru2-jin1 yong4-shang4-le5 zi4-lai2-shui3,zai4-ye3 bu2-yong4 wai4-chu1 tiao1-shui3.|黄启思一家如今用上了自来水，再也不用外出挑水。
 007690|DataBaker|ta1-ting2 dong3-shi4-de5,jiu4 ting1-hua4/qu4 shang4-xue2-le5.|她挺懂事的，就听话去上学了。
@@ -6651,7 +6652,7 @@
 000084|DataBaker|zhun1-zhun1 ding1-ning2,wu4-wang4 tian1-shan1/bu3-yu4-qing2.|谆谆叮咛，勿忘天山哺育情。
 009684|DataBaker|ta1-xiang3 kang2-zhe5,que4-yi3 li4-bu4 cong2-xin1.|他想扛着，却已力不从心。
 008089|DataBaker|shou4-shang1-de5 hai2-zi5/pa1-zai4 di4-shang4/yi2-dong4-bu2-dong4,hou4-bei4 yi2-ma1 fa1-xian4.|受伤的孩子趴在地上一动不动，后被姨妈发现。
-008197|DataBaker|hen3-an1-quan2,shi4 ni3-men5 bu4-xiang2 wo3-an1-quan2,ha1-ha1!|很安全，是你们不想我安全，哈哈！
+008197|DataBaker|hen3-an1-quan2,shi4 ni3-men5 bu4-xiang2 wo3-an1-quan2,ha1-ha1!|很安全，是你们不想我安全，哈哈 ！
 008556|DataBaker|min2-jing3 xi1-wang4,deng4-jin1-chao1/ji2-shi2 lian2-xi4 ben3-bao4 re4-xian4,jiu3-liu4 er4-yao1-yao1.|民警希望邓金超及时联系本报热线九六二幺幺。
 000726|DataBaker|ru2-guo3/wei2-chi2 yuan2-jia4,yue4-sao3 dou1-hui4 pao2-zou3.|如果维持原价，月嫂都会跑走。
 005547|DataBaker|yun1-wan2 ran2-hou4-ne5?|晕完然后呢？
@@ -6744,7 +6745,7 @@
 004654|DataBaker|zhe4-ge4 wen4-ti2/yi3-jing1 kun4-rao2-wo3 yi2-ge4 xiao3-shi2-le5,yao4-bu5,qu4-chi1-wan3 san1-xian1 hun2-tun5?|这个问题已经困扰我一个小时了，要不，去吃碗三鲜馄饨？
 000071|DataBaker|er4-jing4-jia1/zhu4 bei2-wu3 huan2-wai4,shang4-ban1/yao4-qu4 ya4-yun4-cun1/hua2-tang2 shang1-chang3.|二敬家住北五环外，上班要去亚运村华堂商场。
 003694|DataBaker|zhi4-hong2-qu1/ben3-shi4 kong1-de5,xiang1-dang1-yu2/dian4-nao2 huan3-cun2.|滞洪区本是空的，相当于电脑缓存。
-007869|DataBaker|yi4-kou3-qi4 he1-le5 san1-wan2 nai3-cha2,chi1-xia4 yi2-kuai4-nang2,ti3-nei4/cai2-suan4 you3-xie1 re4-li4.|一口气喝了三碗奶茶，吃下一块馕，体内才算有些热力。
+007869|DataBaker|yi4-kou3-qi4 he1-le5 san1-wan2 nai3-cha2/chi1-xia4 yi2-kuai4-nang2,ti3-nei4/cai2-suan4 you3-xie1 re4-li4.|一口气喝了三碗奶茶，吃下一块馕，体内才算有些热力。
 006033|DataBaker|bai2-gong1/zi4-niang4 pi2-jiu3-de5 wai4-bao1-zhuang1.|白宫自酿啤酒的外包装。
 004133|DataBaker|mei3-jie2-wen4,ni3-ne5?|美洁问你呢？
 002147|DataBaker|liang3-ren2/zai4-ci4-xiang3 wai1-dian3-zi5.|两人再次想歪点子。
@@ -7767,7 +7768,7 @@
 007479|DataBaker|zhe4-shi4/zhong1-guo2 guo2-jia1 yuan2-shou3/shou3-ci4 fang2-mei3.|这是中国国家元首首次访美。
 001379|DataBaker|qi2/gan2-jin3 shan2-duo3,nan2-zi3/you4-chao2-qi2 zuo3-ce4-yao1/zha1-le5 yi4-dao1.|其赶紧闪躲，男子又朝其左侧腰扎了一刀。
 007553|DataBaker|ping2-zheng3-de5 bai2-se4 jia3-ya2-jian1,hai2 dian3-zhui4-zhe5 shu4-ke1 jin1-huang2-se4-de5 jia3-ya2.|平整的白色假牙间，还点缀着数颗金黄色的假牙。
-005107|DataBaker|qian2-rong2/ye3 chui2-tou2 sang4-qi4 jin4-lai2,jian4-le5-ta1/ye3 bu2-ji4 ng1-yuan4-le5,dao4,wo3-he2 na4-ge5/xing4-yao2-de5 chui1-la5!|钱荣也垂头丧气进来，见了他也不计恩怨了，道我和那个姓姚的吹啦！
+005107|DataBaker|qian2-rong2/ye3 chui2-tou2 sang4-qi4 jin4-lai2,jian4-le5-ta1/ye3 bu2-ji4 en1-yuan4-le5,dao4,wo3-he2 na4-ge5/xing4-yao2-de5 chui1-la5!|钱荣也垂头丧气进来，见了他也不计恩怨了，道我和那个姓姚的吹啦！
 001982|DataBaker|xi1-er3-dun4/kai1/hong2-se4 fa3-la1-li4,zhang3-ji4-xing4/shuang1-tui3 bing4-long3 xia4-che1.|希尔顿开红色法拉利，长记性双腿并拢下车。
 005485|DataBaker|ju4-xi1,shi1-ti3-shang4/hai2-you3 dong4-wu4-de5 yao3-hen2.|据悉，尸体上还有动物的咬痕。
 005869|DataBaker|you4-quan3/yi4-nian2 yao4 zhu4-she4 san1-ci4 yu4-fang2-zhen1,cheng2-quan3,mei3-nian2 zhi3-xu1-yao4 zhu4-she4 yi2-ci4!|幼犬一年要注射三次预防针，成犬每年只需要注射一次！
@@ -8714,7 +8715,7 @@
 003993|DataBaker|guo1-jian4-yi4 xin1-xiang3,mo4-bu2-shi4/fu4-zi2-lia2 chao3-jia4,di4-di5/you4 chu1-qu5 he1 men4-jiu3-le5.|郭建义心想，莫不是父子俩吵架，弟弟又出去喝闷酒了。
 004797|DataBaker|you2-xing2 dui4-wu3/bian1 xing2-jin4,bian1-yu3 hao4-qi2-de5 guan1-zhong4/hu4-zhi4 wen4-hou4/zhu4-he4 xin1-nian2.|游行队伍边行进，边与好奇的观众互致问候祝贺新年。
 003010|DataBaker|shu1 zhu4-fu2-niu1/yong2-yuan3/xing4-fu2 kuai4-le4.|叔祝福妞永远幸福快乐。
-001090|DataBaker|wo3-ai4 zhou1-dong3,ta1-ye3 ai4-wo3,ha1-ha1!|我爱周董，他也爱我，哈哈！
+001090|DataBaker|wo3-ai4 zhou1-dong3,ta1-ye3 ai4-wo3,ha1-ha1!|我爱周董，他也爱我，哈哈 ！
 005330|DataBaker|wang2-you3-de5 wu4-jie3,rang4/xu3-feng1-de5 ban4-yan2-zhe2 xiao3-su1/hen3-ku2-nao3.|网友的误解，让许峰的扮演者小苏很苦恼。
 005968|DataBaker|jia1-zhang3/wei4 xin1-sheng1/kang2-xing2-li5.|家长为新生扛行李。
 004327|DataBaker|zhang1-yue4-hong2/bu2-shi4/chong2-fan3 guo2-jia1-dui4-le5-ma5?|张越红不是重返国家队了吗？
