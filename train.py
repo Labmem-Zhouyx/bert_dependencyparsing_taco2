@@ -21,11 +21,17 @@ from vocoder import get_vocoder, vocoder_infer
 
 def prepare_datasets(hparams):
     if hparams["lang"] == "en":
-        nlp = stanza.Pipeline("en")
+        # stanza.download("en", "path")
+        nlp = stanza.Pipeline("en", "/apdcephfs/private_yatsenzhou/pretrained/stanza/stanza_en")
+        # https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased.tar.gz
+        # https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt
         bert = BertModel.from_pretrained("/apdcephfs/private_yatsenzhou/pretrained/bert/bert-base-uncased")
         tokenizer = BertTokenizer.from_pretrained("/apdcephfs/private_yatsenzhou/pretrained/bert/bert-base-uncased/bert-base-uncased-vocab.txt")
     else:
-        nlp = stanza.Pipeline("zh")
+        # stanza.download("zh", "path")
+        nlp = stanza.Pipeline("zh", "/apdcephfs/private_yatsenzhou/pretrained/stanza/stanza_zh")
+        # https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese.tar.gz
+        # https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-vocab.txt
         bert = BertModel.from_pretrained("/apdcephfs/private_yatsenzhou/pretrained/bert/bert-base-chinese")
         tokenizer = BertTokenizer.from_pretrained("/apdcephfs/private_yatsenzhou/pretrained/bert/bert-base-chinese/bert-base-chinese-vocab.txt")
     # Get data, data loaders and collate function ready

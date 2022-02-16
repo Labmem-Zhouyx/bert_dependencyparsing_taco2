@@ -4,7 +4,7 @@ text_cleaners: []
 train:
   epochs: 500
   iters_per_checkpoint: 10000
-  iters_per_validation: 10
+  iters_per_validation: 100
   batch_size: 32
   seed: 1234
   dynamic_loss_scaling: True
