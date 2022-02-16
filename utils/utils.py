@@ -1,4 +1,5 @@
 import torch
+import dgl
 
 
 def get_mask_from_lengths(lengths, total_length):
@@ -15,6 +16,43 @@ def to_gpu(x):
     if torch.cuda.is_available():
         x = x.cuda(non_blocking=True)
     return torch.autograd.Variable(x)
+
+def graph_to_device(g, device, graph_type):
+    edge_tensor1 = g.edges()[0].to(device).long()
+    edge_tensor2 = g.edges()[1].to(device).long()
+    nodes_num = len(g.nodes())
+
+    if graph_type == "uni_type":
+        # 单向有类型边
+        new_g = dgl.graph((edge_tensor1, edge_tensor2), num_nodes=nodes_num)
+        new_g.edata['type'] = g.edata['type'].to(device).long()
+
+    elif graph_type == "uni_nonetype":
+        # 单向无类型边
+        new_g = dgl.graph((edge_tensor1, edge_tensor2), num_nodes=nodes_num)
+        new_g.edata['type'] = torch.zeros_like(g.edata['type']).to(device).long()
+
+    elif graph_type == "rev_type":
+        # 反向有类型边
+        new_g = dgl.graph((edge_tensor2, edge_tensor1), num_nodes=nodes_num)
+        new_g.edata['type'] = g.edata['type'].to(device).long()
+
+    elif graph_type == "rev_nonetype":
+        # 反向无类型边
+        new_g = dgl.graph((edge_tensor2, edge_tensor1), num_nodes=nodes_num)
+        new_g.edata['type'] = torch.zeros_like(g.edata['type']).to(device).long()
+
+    elif graph_type == "bi_type":
+        # 双向有类型边
+        new_g = dgl.graph((edge_tensor1, edge_tensor2), num_nodes=nodes_num)
+        new_g.edata['type'] = g.edata['type'].to(device).long()
+
+    elif graph_type == "bi_nonetype":
+        # 双向无类型边
+        new_g = dgl.graph((edge_tensor1, edge_tensor2), num_nodes=nodes_num)
+        new_g.edata['type'] = torch.zeros_like(g.edata['type']).to(device).long()
+
+    return new_g
 
 
 _output_ref = None

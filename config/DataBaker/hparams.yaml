@@ -1,0 +1,59 @@
+lang: "zh"
+text_cleaners: []
+
+train:
+  epochs: 500
+  iters_per_checkpoint: 10000
+  iters_per_validation: 10
+  batch_size: 32
+  seed: 1234
+  dynamic_loss_scaling: True
+  fp16_run: False
+  distributed_run: False
+  cudnn_enabled: True
+  cudnn_benchmark: False
+  ignore_layers: ["embedding.weight"]
+  output_dir: "out"
+  log_dir: "log"
+  checkpoint_path: ""
+
+dataset:
+  melfile_path: "/data/training_data/preprocessed_data/DataBaker_16k/mel/"
+  lexicon_path: "lexicon/pinyin-lexicon-r.txt"
+  training_files: "preprocessed_data/DataBaker/train_grapheme.txt"
+  validation_files: "preprocessed_data/DataBaker/val_grapheme.txt"
+  
+model:
+  tacotron_version: "2"  
+  tacotron_config: "config/tacotron2.json"
+  symbols_embed_dim: 512
+  mel_dim: 80
+  r: 3
+  max_decoder_steps: 1000
+  stop_threshold: 0.5
+  # additional parameters
+  use_bert: True
+  bert_dim: 768
+  use_dependency: True
+  graph_type: "rev_type"
+
+optimization:
+  use_saved_learning_rate: False
+  learning_rate: 0.001
+  weight_decay: 0.000001
+  grad_clip_thresh: 1.0
+  mask_padding: True
+
+audio:
+  max_wav_value: 32767.0
+  hop_length: 200
+  win_length: 800
+  filter_length: 1024
+  sampling_rate: 16000
+ 
+vocoder:
+  config: "hifigan/config_16k.json"
+  ckpt: "/apdcephfs/private_yatsenzhou/pretrained/hifigan/DataBaker_16k/g_01000000"
+
+  
+  

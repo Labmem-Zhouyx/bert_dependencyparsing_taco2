@@ -255,12 +255,13 @@ class Tacotron2(nn.Module):
         text = text.to(device).long()
         text_length = text_length.to(device).long()
         mel = mel.to(device).float()
+        mel_length = mel_length.to(device).long()
         stop = stop.to(device).float()
 
-        return (text, text_length, mel), (mel, stop)
+        return (text, text_length, mel, mel_length), (mel, stop)
 
     def forward(self, inputs):
-        inputs, input_lengths, mels = inputs
+        inputs, input_lengths, mels, mel_lengths = inputs
 
         B = inputs.size(0)
 
