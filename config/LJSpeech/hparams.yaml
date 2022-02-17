@@ -33,7 +33,8 @@ model:
   max_decoder_steps: 1000
   stop_threshold: 0.5
   # additional parameters
-  use_bert: False
+  use_bert: True
+  use_bert_type: "lstm"  # direct or lstm
   bert_dim: 768
   use_dependency: True
   graph_type: "rev_type"

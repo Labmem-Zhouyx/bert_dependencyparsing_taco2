@@ -27,6 +27,7 @@ def get_text(tokenizer, bert, nlp, lang, phone_text, raw_text):
     subwords = tokenizer.tokenize(raw_text)
     subword_idx = torch.tensor([tokenizer.convert_tokens_to_ids(subwords)])
 
+    bert.eval()
     with torch.no_grad():
         bert_emb = bert(subword_idx)[0][11][0]
 
@@ -211,12 +212,12 @@ def generate_chinese(filepath, outpath, datapath):
 
 
 if __name__ == '__main__':
-    # generate_chinese("preprocessed_data/DataBaker/train_grapheme.txt", "preprocessed_data/DataBaker/train.txt", "/data/training_data/preprocessed_data/DataBaker_16k/")
-    # generate_chinese("preprocessed_data/DataBaker/val_grapheme.txt", "preprocessed_data/DataBaker/val.txt", "/data/training_data/preprocessed_data/DataBaker_16k/")
-    # generate_chinese("preprocessed_data/DataBaker/test_grapheme.txt", "preprocessed_data/DataBaker/test.txt", "/data/training_data/preprocessed_data/DataBaker_16k/")
+    generate_chinese("preprocessed_data/DataBaker/train_grapheme.txt", "preprocessed_data/DataBaker/train.txt", "/data/training_data/preprocessed_data/DataBaker_16k/")
+    generate_chinese("preprocessed_data/DataBaker/val_grapheme.txt", "preprocessed_data/DataBaker/val.txt", "/data/training_data/preprocessed_data/DataBaker_16k/")
+    generate_chinese("preprocessed_data/DataBaker/test_grapheme.txt", "preprocessed_data/DataBaker/test.txt", "/data/training_data/preprocessed_data/DataBaker_16k/")
     generate_english("preprocessed_data/LJSpeech/train_grapheme.txt", "preprocessed_data/LJSpeech/train.txt", "/data/training_data/preprocessed_data/LJSpeech/")
-    # generate_english("preprocessed_data/LJSpeech/val_grapheme.txt","preprocessed_data/LJSpeech/val.txt", "/data/training_data/preprocessed_data/LJSpeech/")
-    # generate_english("preprocessed_data/LJSpeech/test_grapheme.txt", "preprocessed_data/LJSpeech/test.txt", "/data/training_data/preprocessed_data/LJSpeech/")
+    generate_english("preprocessed_data/LJSpeech/val_grapheme.txt","preprocessed_data/LJSpeech/val.txt", "/data/training_data/preprocessed_data/LJSpeech/")
+    generate_english("preprocessed_data/LJSpeech/test_grapheme.txt", "preprocessed_data/LJSpeech/test.txt", "/data/training_data/preprocessed_data/LJSpeech/")
 
 
 

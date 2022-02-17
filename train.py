@@ -54,6 +54,7 @@ def create_model(hparams):
                         stop_threshold=hparams["model"]["stop_threshold"],
                         r=hparams["model"]["r"],
                         use_bert=hparams["model"]["use_bert"],
+                        use_bert_type=hparams["model"]["use_bert_type"],
                         bert_dim=hparams["model"]["bert_dim"],
                         use_dependency=hparams["model"]["use_dependency"],
                         graph_type=hparams["model"]["graph_type"],

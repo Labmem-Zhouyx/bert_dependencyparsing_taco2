@@ -72,6 +72,7 @@ if __name__ == "__main__":
 
     # Read Config
     hparams = yaml.load(open(args.hparams_path, "r"), Loader=yaml.FullLoader)
+    os.makedirs(hparams["train"]["result_dir"], exist_ok=True)
 
     # Prepare device
     if torch.cuda.is_available():

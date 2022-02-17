@@ -223,19 +223,22 @@ class Decoder(nn.Module):
         return mel_outputs, stop_tokens, attn_scores
 
 
-class GGCN(nn.Module):
-    def __init__(self, in_feats, out_feats, num_rels):
-        super(GGCN, self).__init__()
-        self.conv = GatedGraphConv(in_feats, out_feats, 5, num_rels)
+class RGGN(nn.Module):
+    def __init__(self, in_dim, out_dim, num_rels):
+        super(RGGN, self).__init__()
+        self.ggnn = GatedGraphConv(in_dim, out_dim, 5, num_rels)
+        self.dropout = nn.Dropout(0.2)
+        self.outlayer = nn.Linear(out_dim, out_dim)
 
     def forward(self, g, in_feat, etype):
-        h = self.conv(g, in_feat, etype)
+        h = self.ggnn(g, in_feat, etype)
+        h = self.outlayer(self.dropout(h))
         return h
 
 
 class Semantic_Tacotron2(nn.Module):
     def __init__(self, model_cfg, n_vocab, embed_dim=512, mel_dim=80,
-                 max_decoder_steps=1000, stop_threshold=0.5, r=3, use_bert=False,
+                 max_decoder_steps=1000, stop_threshold=0.5, r=3, use_bert=False, use_bert_type="lstm",
                  bert_dim=768, use_dependency=False, graph_type="rev_type"):
         super(Semantic_Tacotron2, self).__init__()
 
@@ -249,16 +252,20 @@ class Semantic_Tacotron2(nn.Module):
 
         # Semantic part, including BERT & Dependency Graph
         self.use_bert = use_bert
+        self.use_bert_type = use_bert_type
         self.bert_dim = bert_dim
         self.use_dependency = use_dependency
         self.graph_type = graph_type
         if self.use_bert:
             if self.use_dependency:
                 if self.graph_type.startswith('bi'):
-                    self.gnn_uni = GGCN(self.bert_dim, self.bert_dim, len(deprel_labels))
-                    self.gnn_rev = GGCN(self.bert_dim, self.bert_dim, len(deprel_labels))
+                    self.gnn_uni = RGGN(bert_dim, bert_dim, len(deprel_labels))
+                    self.gnn_rev = RGGN(bert_dim, bert_dim, len(deprel_labels))
                 else:
-                    self.gnn = GGCN(self.bert_dim, self.bert_dim, len(deprel_labels))
+                    self.gnn = RGGN(bert_dim, bert_dim, len(deprel_labels))
+            else:
+                self.bert_lstm = nn.LSTM(bert_dim, bert_dim // 2, 1, batch_first=True, bidirectional=True) \
+                    if use_bert_type == "lstm" else None
             encoder_embed_dim = embed_dim + bert_dim
         else:
             encoder_embed_dim = embed_dim
@@ -314,9 +321,14 @@ class Semantic_Tacotron2(nn.Module):
                 else:
                     word_emb = self.gnn(g_batch, g_nfeat, g_etype)
                 word_emb = torch.reshape(word_emb, [B, -1, self.bert_dim])
-            
+            else:
+                if self.use_bert_type == "lstm":
+                    self.bert_lstm.flatten_parameters()
+                    word_emb, _ = self.bert_lstm(word_emb)
+
             for i in range(B):
                 semantic_representation[i] = torch.index_select(word_emb[i], 0, phone2word_idx[i])
+
             inputs = torch.cat([inputs, semantic_representation], 2)
         # (B, T, embed_dim)
         encoder_outputs = self.encoder(inputs)
