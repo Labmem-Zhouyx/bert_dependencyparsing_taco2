@@ -61,13 +61,13 @@ class TextMelDataset(torch.utils.data.Dataset):
 
     def get_text(self, phone_text, wordemb_path, p2widx_path, depgraph_path):
 
-        text_norm = torch.IntTensor(text_to_sequence(phone_text, self.text_cleaners))
-        word_emb = torch.from_numpy(np.load(wordemb_path))
-        phone2word_idx = torch.from_numpy(np.load(p2widx_path))
+        text_norm = torch.LongTensor(text_to_sequence(phone_text, self.text_cleaners))
+        word_emb = torch.FloatTensor(torch.from_numpy(np.load(wordemb_path)))
+        phone2word_idx = torch.LongTensor(torch.from_numpy(np.load(p2widx_path)))
         depgraph = np.load(depgraph_path)
-        nodes_list1 = torch.from_numpy(depgraph[0])
-        nodes_list2 = torch.from_numpy(depgraph[1])
-        deprels_id = torch.from_numpy(depgraph[2])
+        nodes_list1 = torch.LongTensor(torch.from_numpy(depgraph[0]))
+        nodes_list2 = torch.LongTensor(torch.from_numpy(depgraph[1]))
+        deprels_id = torch.LongTensor(torch.from_numpy(depgraph[2]))
 
         return text_norm, word_emb, phone2word_idx, nodes_list1, nodes_list2, deprels_id
 
@@ -182,13 +182,13 @@ class TextDataset(torch.utils.data.Dataset):
 
     def get_text(self, basename, phone_text, wordemb_path, p2widx_path, depgraph_path):
 
-        text_norm = torch.IntTensor(text_to_sequence(phone_text, self.text_cleaners))
-        word_emb = torch.from_numpy(np.load(wordemb_path))
-        phone2word_idx = torch.from_numpy(np.load(p2widx_path))
+        text_norm = torch.LongTensor(text_to_sequence(phone_text, self.text_cleaners))
+        word_emb = torch.FloatTensor(torch.from_numpy(np.load(wordemb_path)))
+        phone2word_idx = torch.LongTensor(torch.from_numpy(np.load(p2widx_path)))
         depgraph = np.load(depgraph_path)
-        nodes_list1 = torch.from_numpy(depgraph[0])
-        nodes_list2 = torch.from_numpy(depgraph[1])
-        deprels_id = torch.from_numpy(depgraph[2])
+        nodes_list1 = torch.LongTensor(torch.from_numpy(depgraph[0]))
+        nodes_list2 = torch.LongTensor(torch.from_numpy(depgraph[1]))
+        deprels_id = torch.LongTensor(torch.from_numpy(depgraph[2]))
 
         return text_norm, word_emb, phone2word_idx, nodes_list1, nodes_list2, deprels_id, basename
 
