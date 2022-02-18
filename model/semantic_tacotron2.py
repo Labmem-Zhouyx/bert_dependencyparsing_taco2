@@ -250,6 +250,11 @@ class Semantic_Tacotron2(nn.Module):
         val = sqrt(3.0) * std  # uniform bounds for std
         self.embedding.weight.data.uniform_(-val, val)
 
+        # Encoder
+        encoder_cfg = model_cfg["encoder"]
+        encoder_out_dim = encoder_cfg["blstm_units"]
+        self.encoder = Encoder(embed_dim, **encoder_cfg)
+
         # Semantic part, including BERT & Dependency Graph
         self.use_bert = use_bert
         self.use_bert_type = use_bert_type
@@ -266,18 +271,13 @@ class Semantic_Tacotron2(nn.Module):
             else:
                 self.bert_lstm = nn.LSTM(bert_dim, bert_dim // 2, 1, batch_first=True, bidirectional=True) \
                     if use_bert_type == "lstm" else None
-            encoder_embed_dim = embed_dim + bert_dim
+            decoder_input_dim = encoder_out_dim + bert_dim
         else:
-            encoder_embed_dim = embed_dim
-
-        # Encoder
-        encoder_cfg = model_cfg["encoder"]
-        encoder_out_dim = encoder_cfg["blstm_units"]
-        self.encoder = Encoder(encoder_embed_dim, **encoder_cfg)
+            decoder_input_dim = encoder_out_dim
 
         # Decoder
         decoder_cfg = model_cfg["decoder"]
-        self.decoder = Decoder(mel_dim, r, encoder_out_dim, **decoder_cfg,
+        self.decoder = Decoder(mel_dim, r, decoder_input_dim, **decoder_cfg,
             max_decoder_steps=max_decoder_steps, stop_threshold=stop_threshold)
 
         # Postnet
@@ -311,6 +311,8 @@ class Semantic_Tacotron2(nn.Module):
 
         # (B, T)
         inputs = self.embedding(inputs)
+        # (B, T, embed_dim)
+        encoder_outputs = self.encoder(inputs)
 
         if self.use_bert:
             if self.use_dependency:
@@ -329,9 +331,7 @@ class Semantic_Tacotron2(nn.Module):
             for i in range(B):
                 semantic_representation[i] = torch.index_select(word_emb[i], 0, phone2word_idx[i])
 
-            inputs = torch.cat([inputs, semantic_representation], 2)
-        # (B, T, embed_dim)
-        encoder_outputs = self.encoder(inputs)
+            encoder_outputs = torch.cat([encoder_outputs, semantic_representation], 2)
 
         # (B, T, mel_dim)
         mel_outputs, stop_tokens, alignments = self.decoder(

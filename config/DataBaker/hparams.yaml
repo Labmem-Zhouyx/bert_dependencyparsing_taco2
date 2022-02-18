@@ -36,7 +36,7 @@ model:
   use_bert: True
   use_bert_type: "lstm"  # direct or lstm
   bert_dim: 768
-  use_dependency: True
+  use_dependency: False
   graph_type: "rev_type"
 
 optimization:

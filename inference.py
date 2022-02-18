@@ -30,6 +30,7 @@ def synthesize_batch(hparams, model, batch):
         inputs, basenames = batch
         predicts = model.inference(inputs)
         wav_predictions = vocoder_infer(predicts[1].transpose(1, 2), vocoder, hparams)
+        wav
         for wav, basename in zip(wav_predictions, basenames):
             wavfile.write(os.path.join(hparams["train"]["result_dir"], "{}.wav".format(basename)), hparams["audio"]["sampling_rate"], wav)
 
