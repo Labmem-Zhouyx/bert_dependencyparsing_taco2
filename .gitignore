@@ -4,3 +4,4 @@ log/
 result/
 start.sh
 submit2jizhi.json
+infer.sh

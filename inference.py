@@ -4,6 +4,7 @@ import argparse
 import json
 import yaml
 
+from tqdm import tqdm
 import torch
 from torch.utils.data import DataLoader
 import dgl
@@ -29,8 +30,7 @@ def synthesize_batch(hparams, model, batch):
     with torch.no_grad():
         inputs, basenames = batch
         predicts = model.inference(inputs)
-        wav_predictions = vocoder_infer(predicts[1].transpose(1, 2), vocoder, hparams)
-        wav
+        wav_predictions = vocoder_infer(predicts[1][:, :-1, :].transpose(1, 2), vocoder, hparams)
         for wav, basename in zip(wav_predictions, basenames):
             wavfile.write(os.path.join(hparams["train"]["result_dir"], "{}.wav".format(basename)), hparams["audio"]["sampling_rate"], wav)
 
@@ -99,7 +99,7 @@ if __name__ == "__main__":
         testdata_loader = DataLoader(testset, sampler=None, num_workers=1,
                                      shuffle=False, batch_size=1,
                                      pin_memory=False, collate_fn=collate_fn)
-        for i, batch in enumerate(testdata_loader):
+        for i, batch in tqdm(enumerate(testdata_loader)):
             synthesize_batch(hparams, model, batch)
 
     if args.mode == "single":
@@ -135,5 +135,4 @@ if __name__ == "__main__":
         g_batch = dgl.batch([g])
         batch = (text, text_length, word_emb, phone2word_idx, g_batch), basenames
         synthesize_batch(hparams, model, batch)
-
 

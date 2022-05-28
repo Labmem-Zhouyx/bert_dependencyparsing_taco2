@@ -6,6 +6,7 @@ import re
 from tqdm import tqdm
 from pytorch_pretrained_bert import BertModel, BertTokenizer
 from text.dependency_relations import deprel_labels_to_id
+import random
 
 
 def read_lexicon(lex_path):
@@ -32,6 +33,8 @@ def get_text(tokenizer, bert, nlp, lang, phone_text, raw_text):
         bert_emb = bert(subword_idx)[0][11][0]
 
     words, nodes_list1, nodes_list2, deprels_id = get_dependencyparsing(nlp, raw_text)
+    #nodes_list2 = [2 for i in range(len(nodes_list2))]
+    #print("Nodes_list2: ", nodes_list2)
     # print(words, nodes_list1, nodes_list2, deprels_id)
     word_emb = get_word_embedding(subwords, words, bert_emb)
 

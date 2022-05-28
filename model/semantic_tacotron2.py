@@ -239,7 +239,7 @@ class RGGN(nn.Module):
 class Semantic_Tacotron2(nn.Module):
     def __init__(self, model_cfg, n_vocab, embed_dim=512, mel_dim=80,
                  max_decoder_steps=1000, stop_threshold=0.5, r=3, use_bert=False, use_bert_type="lstm",
-                 bert_dim=768, use_dependency=False, graph_type="rev_type"):
+                 bert_dim=768, use_dependency=False, graph_type="bi_type"):
         super(Semantic_Tacotron2, self).__init__()
 
         self.mel_dim = mel_dim
@@ -327,6 +327,13 @@ class Semantic_Tacotron2(nn.Module):
                 if self.use_bert_type == "lstm":
                     self.bert_lstm.flatten_parameters()
                     word_emb, _ = self.bert_lstm(word_emb)
+
+            # import numpy as np
+            # import os
+            # out_word_emb = word_emb[0].detach().cpu().numpy()
+            # for j in range(out_word_emb.shape[0]):
+            #     np.save(os.path.join("/data/code/tacotron/emb_LJSpeech/", 'bert-dep(bi)_{}.npy'.format(str(j))),
+            #             out_word_emb[j])
 
             for i in range(B):
                 semantic_representation[i] = torch.index_select(word_emb[i], 0, phone2word_idx[i])
